@@ -8,6 +8,12 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
+router.post('/register',(req, res) => {
+  res.send({
+    message: `Hello, ${req.body.email} have fun!`
+  });
+});
+
 router.get('/getUserInfo', function(req, res, next) {
 
   var user = new User();
