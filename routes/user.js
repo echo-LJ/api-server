@@ -1,4 +1,3 @@
-var URL = require('url');  
 function User() {
   this.name;
   this.city;

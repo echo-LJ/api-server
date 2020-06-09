@@ -15,7 +15,7 @@ router.get('/getUserInfo', function(req, res, next) {
 
 if(params.id == '1') {
 
-  user.name = "ligh";
+  user.name = "lighn";
   user.age = "1";
   user.city = "北京市";
 
