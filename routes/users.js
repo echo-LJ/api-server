@@ -2,17 +2,18 @@ var express = require('express');
 var router = express.Router();
 var URL = require('url');
 var User = require('./user');
+const AuthenticationController = require('../controllers/AuthenticationController')
+const AuthenticationControllerPolicy = require('../policies/AuthenticationControllerPolicy')
+
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
-router.post('/register',(req, res) => {
-  res.send({
-    message: `Hello, ${req.body.email} have fun!`
-  });
-});
+router.post('/register',
+AuthenticationControllerPolicy.register,
+AuthenticationController.register)
 
 router.get('/getUserInfo', function(req, res, next) {
 
